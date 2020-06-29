@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixins/media-suffixes';
+
+.is {
+  &-hidden {
+    display: none;
+  }
+
+  &-disabled {
+    @include media-suffixes {
+      opacity: .5;
+    }
+  }
+}

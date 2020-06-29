@@ -1,0 +1,15 @@
+@import '../variables';
+
+@mixin map-utilities($prop, $map, $key, $key2: null) {
+  $result: call(get-function($map), $key);
+  $extra: '';
+
+  @if ($key2) {
+    $result: call(get-function($map), $key, $key2);
+    $extra: '-#{$key2}';
+  }
+
+  &-#{$prop}-#{$key}#{$extra} {
+    #{$prop}: $result;
+  }
+}

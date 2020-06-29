@@ -1,0 +1,16 @@
+
+@import '../variables';
+
+$medias: xxs, xs, s, m, l, xl;
+
+@mixin media-suffixes {
+  @content;
+
+  @each $media in $medias {
+    &\@#{$media} {
+      @media screen and (max-width: get-media($media)) {
+        @content;
+      }
+    }
+  }
+}

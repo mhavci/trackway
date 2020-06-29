@@ -1,0 +1,20 @@
+@import 'variables';
+@import './mixins/map-utilities';
+
+.u {
+  &-align {
+    &-center {
+      text-align: center;
+    }
+
+    &-left {
+      text-align: left;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+
+  @include map-utilities(color, get-color, secondary, dark);
+}
