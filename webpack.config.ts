@@ -32,8 +32,8 @@ if (dev) {
 }
 
 const config: webpack.Configuration = {
-    mode: dev ? 'development' : 'production',
-  devtool: dev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
+  mode: dev ? 'development' : 'production',
+  devtool: dev ? 'cheap-module-eval-source-map' : 'cheap-source-map',
   entry: './src/main.tsx',
   devServer: {
     compress: dev,
@@ -101,21 +101,14 @@ const config: webpack.Configuration = {
     ]
   },
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, dev ? 'dist' : 'build'),
     filename: 'main.js',
     chunkFilename: '[name].js'
   },
   plugins,
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-    modules: ['node_modules', 'src'],
-    alias: {
-      components: resolve(__dirname, 'src/components'),
-      reducers: resolve(__dirname, 'src/reducers'),
-      sagas: resolve(__dirname, 'src/sagas'),
-      selectors: resolve(__dirname, 'src/selectors'),
-      utils: resolve(__dirname, 'src/utils')
-    }
+    modules: ['node_modules', 'src']
   },
   optimization: {
     minimizer: [
