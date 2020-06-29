@@ -24,7 +24,7 @@
     "start-server": "cross-env NODE_ENV=dev TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --inline --progress --colors",
     "build": "NODE_ENV=prod TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --progress --colors",
     "start": "node server/index.js",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
