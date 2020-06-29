@@ -11,7 +11,7 @@ import {
 import CopyPlugin from 'copy-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-const dev = process.env.NODE_ENV !== 'prod' || process.env.NODE_ENV !== 'production';
+const dev = process.env.NODE_ENV !== 'prod';
 
 const plugins = [
   new CleanPlugin(),
