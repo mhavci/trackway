@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=dev TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --inline --progress --colors",
-    "build": "cross-env NODE_ENV=prod TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --progress --colors"
+    "build": "cross-env NODE_ENV=prod TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --progress --colors",
+    "heroku-postbuild": "NODE_ENV=prod TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --progress --colors"
   },
   "eslintConfig": {
     "extends": "react-app"
