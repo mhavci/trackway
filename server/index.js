@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
 app.get('/', (req, res) => {
-    res.send("<h1>Home page</h1>");
+    res.send("trackway");
 });
 
 app.listen(port, () => {
