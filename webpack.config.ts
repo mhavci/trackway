@@ -1,9 +1,9 @@
-import webpack from 'webpack';
+import * as webpack from 'webpack';
 import {
   resolve
 } from 'path';
 import HtmlPlugin from 'html-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {
   CleanWebpackPlugin as CleanPlugin
@@ -31,8 +31,8 @@ if (dev) {
   plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-export default {
-  mode: dev ? 'development' : 'production',
+const config: webpack.Configuration = {
+    mode: dev ? 'development' : 'production',
   devtool: dev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
   entry: './src/main.tsx',
   devServer: {
@@ -146,3 +146,5 @@ export default {
     }
   }
 };
+
+export default config;
